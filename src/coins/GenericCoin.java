@@ -71,4 +71,18 @@ public class GenericCoin {
 			return "Tails";
 		}
 	}
+	
+	//Compares the sides of 2 coins
+	public boolean equals(Object comparison)
+	{
+		if(comparison instanceof GenericCoin)
+		{
+			if((this.isHeads() && ((GenericCoin) comparison).isHeads()) || (this.isTails() && ((GenericCoin) comparison).isTails()))
+			{
+				return true;
+			}
+			
+		}
+		return false;
+	}
 }

@@ -22,7 +22,7 @@ public class Coin extends GenericCoin {
 	}
 	
 	//Mutators
-	public void setName(String name, double value)
+	public void set(String name, double value)
 	{
 		this.name = name;
 		this.value = value;
@@ -44,9 +44,10 @@ public class Coin extends GenericCoin {
 	{
 		//Determine the coin's side
 		String side = super.toString();
-		return "This " + name + " has a value of " + value + " and is currently " + side + "up.";
+		return "This " + name + " has a value of " + value + " and is currently " + side + " up.";
 	}
 	
+	//Compares 2 coins based on value, name and side
 	public boolean equals(Object comparison)
 	{
 		if(comparison instanceof Coin)
@@ -62,4 +63,27 @@ public class Coin extends GenericCoin {
 		return false;
 	}
 
+	//Main method to test each method
+	public static void main(String args[]){
+		Coin testCoin = new Coin();
+		
+		
+		System.out.println(testCoin.getName());
+		System.out.println(testCoin.getValue());
+		System.out.println(testCoin.isTails());
+		System.out.println(testCoin.toString());
+		System.out.println(testCoin.equals(testCoin));
+		
+		Coin testCoin2 = new Coin();
+		testCoin2.set("Quarter", 0.25);
+		testCoin2.setToTails();
+		
+		System.out.println(testCoin2.getName());
+		System.out.println(testCoin2.getValue());
+		System.out.println(testCoin2.isTails());
+		System.out.println(testCoin2.toString());
+		System.out.println(testCoin2.equals(testCoin));
+		
+	}
 }
+
